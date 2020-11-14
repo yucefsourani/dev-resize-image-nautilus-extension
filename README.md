@@ -1,5 +1,5 @@
-# dev-resize-image-nautilus-extension
-nautilus extension to resize image to 8x8 16x16 ,,,,
+# resize-and-convert-image-to-png-nautilus-extension
+nautilus extension to convert image to png and resize image to 8x8 16x16 ,,,,
 
 https://arfedora.blogspot.com
 
