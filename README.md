@@ -5,7 +5,7 @@ https://arfedora.blogspot.com
 
 # to use
 
-Download and move  dev-resize-image-nautilus-extension.py to :
+Download and move  resize-and-convert-image-to-png-nautilus-extension.py to :
 
     /usr/share/nautilus-python/extensions/
     
