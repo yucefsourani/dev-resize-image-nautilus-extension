@@ -83,7 +83,8 @@ class BackgroundImageExtension(GObject.GObject, Nautilus.MenuProvider):
                     width,height= s.split("x")
                     saveas = os.path.join(folder_location,file.get_name())
                     im = GdkPixbuf.Pixbuf.new_from_file_at_scale(image,int(width),int(height),ignore_aspect_ration)
-                    if not im.savev(saveas,SUPPORTED_FORMATS[mime_type],[],[]):
+                    #if not im.savev(saveas,SUPPORTED_FORMATS[mime_type],[],[]):
+                    if not im.savev(saveas,"png",[],[]):
                         return False
                     print(saveas)
             except Exception as e:
@@ -97,7 +98,8 @@ class BackgroundImageExtension(GObject.GObject, Nautilus.MenuProvider):
                 width,height= size.split("x")
                 saveas = os.path.join(folder_location,file.get_name())
                 im = GdkPixbuf.Pixbuf.new_from_file_at_scale(image,int(width),int(height),ignore_aspect_ration)
-                if not im.savev(saveas,SUPPORTED_FORMATS[mime_type],[],[]):
+                #if not im.savev(saveas,SUPPORTED_FORMATS[mime_type],[],[]):
+                if not im.savev(saveas,"png",[],[]):
                     return False
                 print(saveas)
             except Exception as e:
