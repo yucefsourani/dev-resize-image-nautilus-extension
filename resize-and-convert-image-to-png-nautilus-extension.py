@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-#  dev-resize-image-nautilus-extension.py
+#  resize-and-convert-image-to-png-nautilus-extension.py
 #  
 #  Copyright 2020 yucef sourani <youssef.m.sourani@gmail.com>
 #  
@@ -46,20 +46,20 @@ class BackgroundImageExtension(GObject.GObject, Nautilus.MenuProvider):
             return
             
         menu = Nautilus.Menu.new()
-        item = Nautilus.MenuItem(name='Nautilus::Resize_Image_',
+        item = Nautilus.MenuItem(name='Nautilus::resize-and-convert-image-to-png',
                                  label='Resize Image',
                                  tip='Resize Image')
         item.set_submenu(menu)
         
         for size in SIZE:
-            item2 = Nautilus.MenuItem(name='Nautilus::set_image_size_'+size,
+            item2 = Nautilus.MenuItem(name='Nautilus::resize-and-convert-image-to-png_size_'+size,
                                  label=size,
                                  tip='Resize current image to '+size)
         
             menu.append_item(item2)
             item2.connect('activate', self.resize_and_save, file,size,mime_type)
 
-        item2 = Nautilus.MenuItem(name='Nautilus::set_image_size_all',
+        item2 = Nautilus.MenuItem(name='Nautilus::resize-and-convert-image-to-png_size_all',
                             label="all",
                             tip='Resize current image to all size')
         
@@ -81,7 +81,7 @@ class BackgroundImageExtension(GObject.GObject, Nautilus.MenuProvider):
                     folder_location = os.path.join(parent_location,"hicolor" ,s,"apps")
                     os.makedirs(folder_location, exist_ok=True)
                     width,height= s.split("x")
-                    saveas = os.path.join(folder_location,file.get_name())
+                    saveas = os.path.join(folder_location,os.path.splitext(file.get_name())[0]+".png")
                     im = GdkPixbuf.Pixbuf.new_from_file_at_scale(image,int(width),int(height),ignore_aspect_ration)
                     #if not im.savev(saveas,SUPPORTED_FORMATS[mime_type],[],[]):
                     if not im.savev(saveas,"png",[],[]):
@@ -96,7 +96,7 @@ class BackgroundImageExtension(GObject.GObject, Nautilus.MenuProvider):
                 image =  file.get_location().get_path()
                 os.makedirs(folder_location, exist_ok=True)
                 width,height= size.split("x")
-                saveas = os.path.join(folder_location,file.get_name())
+                saveas = os.path.join(folder_location,os.path.splitext(file.get_name())[0]+".png")
                 im = GdkPixbuf.Pixbuf.new_from_file_at_scale(image,int(width),int(height),ignore_aspect_ration)
                 #if not im.savev(saveas,SUPPORTED_FORMATS[mime_type],[],[]):
                 if not im.savev(saveas,"png",[],[]):
