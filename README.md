@@ -19,6 +19,6 @@ Then restart nautilus.
 
 # Screenshot
 
-![Alt text](https://raw.githubusercontent.com/yucefsourani/dev-resize-image-nautilus-extension/main/Screenshot1.png "Screenshot")
+![Alt text](https://raw.githubusercontent.com/yucefsourani/resize-and-convert-image-to-png-nautilus-extension/main/Screenshot1.png "Screenshot")
 
-![Alt text](https://raw.githubusercontent.com/yucefsourani/dev-resize-image-nautilus-extension/main/Screenshot2.png "Screenshot")
+![Alt text](https://raw.githubusercontent.com/yucefsourani/resize-and-convert-image-to-png-nautilus-extension/main/Screenshot2.png "Screenshot")
