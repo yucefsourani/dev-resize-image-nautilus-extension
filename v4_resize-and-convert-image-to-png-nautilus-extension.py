@@ -23,7 +23,7 @@
 # 
 import gi
 gi.require_version('GdkPixbuf', '2.0')
-from gi.repository import Nautilus, GObject, Gio, GdkPixbuf
+from gi.repository import Nautilus, GObject, GdkPixbuf
 import os
 
 SUPPORTED_FORMATS = dict([(i.get_mime_types()[0],i.get_name()) for i in GdkPixbuf.Pixbuf.get_formats() if i]+[("image/jpg","jpg",)])
