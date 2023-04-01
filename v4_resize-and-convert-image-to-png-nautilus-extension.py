@@ -27,7 +27,7 @@ from gi.repository import Nautilus, GObject, GdkPixbuf
 import os
 
 SUPPORTED_FORMATS = dict([(i.get_mime_types()[0],i.get_name()) for i in GdkPixbuf.Pixbuf.get_formats() if i]+[("image/jpg","jpg",)])
-SIZE = ("8x8","16x16","22x22","24x24","32x32","38x36","42x42","64x64","72x72","96x96","128x128","256x256","512x512")
+SIZE = ("8x8","16x16","22x22","24x24","32x32","36x36","42x42","64x64","72x72","96x96","128x128","256x256","512x512")
 
 
 class ResizeImageExtension(GObject.GObject, Nautilus.MenuProvider):
